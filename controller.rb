@@ -14,3 +14,4 @@ end
 get '/students/new' do
     erb(:new)
 end
+
