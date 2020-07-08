@@ -13,7 +13,7 @@ class Student
     end
 
     def pretty_name()
-        return "#{@first_name} #{second_name}"
+        return "#{@first_name} #{@second_name}"
     end
 
     def save()
@@ -24,6 +24,11 @@ class Student
         values = [@first_name, @second_name, @house, @age]
         result = SqlRunner.run(sql, values).first
         @id = result['id'].to_i
+    end
+
+    def self.delete_all()
+        sql = "DELETE FROM students"
+        SqlRunner.run(sql)
     end
 
     def self.find_all()
