@@ -6,7 +6,7 @@ also_reload('./models/*')
 
 # INDEX
 get '/students' do
-    @students = Student.find_all()
+    @students = Student.all()
     erb(:index)
 end
 
