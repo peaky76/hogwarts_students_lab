@@ -17,7 +17,8 @@ class Student
         WHERE id = $1"
         values = [@house_id]
         house_data = SqlRunner.run(sql, values).first
-        return House.new(house_data)
+        house = House.new(house_data)
+        return house
     end
 
     def pretty_name()

@@ -1,6 +1,9 @@
-<%@students.each do |student| %>
-    <p>Name: <%= student.pretty_name()%></p>
-    <p>House: <%= student.house%></p>
-    <p>Age: <%= student.age%></p>
+<ul>
+<% @students.each do |student| %>
+    <li>
+    <%= student.second_name %>, <%= student.first_name %> (<%= student.age %>)
+    <img src="<%= student.house.logo_url %>%" alt="Logo of <%= student.house.name %>%" width="32" height="40">
+     </li>
     <hr/>
 <% end %>
+</ul>

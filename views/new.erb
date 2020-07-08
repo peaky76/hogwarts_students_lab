@@ -1,21 +1,31 @@
 <form method="post" action="/students">
+
+    <p>
     <label for="first-name">First Name:</label>
     <input id="first-name" type="text" name="first_name"/>
+    </p>
 
+    <p>
     <label for="second-name">Second Name:</label>
     <input id="second-name" type="text" name="second_name"/>
+    </p>
 
-    <label for="house-select">House</label>
-    <select id="house-select" name="house">
-        <option value="Gryffindor">Gryffindor</option>
-        <option value="Hufflepuff">Hufflepuff</option>
-        <option value="Ravenclaw">Ravenclaw</option>
-        <option value="Slytherin">Slytherin</option>
+    <p>
+    <label for="house-select">House:</label>
+    <select id="house-select" name="house_id">
+        <% @houses.each do |house| %>
+            <option value="<%= house.id %>"><%= house.name %></option>
+        <% end %>  
     </select>
+    </p>
 
+    <p>
     <label for="age">Age:</label>
     <input id="age" type="number" name="age"/>
+    </p>
 
+    <p>
     <input type="submit" value="Add student"/>
+    </p>
 
 </form>
