@@ -1,0 +1,74 @@
+body {
+    font-family: Baskerville, serif;
+    background-color: black;
+    color: whitesmoke;
+}
+
+header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+nav {
+    text-align: center;
+    text-transform: uppercase;
+}
+
+h1 {
+    text-transform: uppercase;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+nav > ul > li {
+    background-color: slategrey;
+    padding: 5px;
+}
+
+a {
+    text-decoration: none;
+}
+
+a:visited {
+    color: whitesmoke;
+}
+
+a:hover {
+    color: black;
+}
+
+hr {
+    width: 33%;
+    margin: 5px 33%;
+}
+
+.student, .form-element {
+    width: 33%;
+    margin: 0 33%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 22px;
+}
+
+.form-element {
+    padding: 10px;
+}
+
+.submit-btn {
+    text-align: center;
+    margin: 20px;
+}
+
+.submit-btn > input {
+    text-transform: uppercase;    
+}
+
+.submit-btn > input:hover {
+    background-color: yellow;
+    cursor: pointer;    
+}
