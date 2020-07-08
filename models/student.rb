@@ -2,14 +2,22 @@ require_relative('../db/sql_runner')
 
 class Student
 
-    attr_reader :first_name, :second_name, :house, :age, :id
+    attr_reader :first_name, :second_name, :house_id, :age, :id
 
     def initialize(options)
         @id = options['id'].to_i if options['id']
         @first_name = options['first_name']
         @second_name = options['second_name']
-        @house = options['house']
+        @house_id = options['house_id'].to_i
         @age = options['age']
+    end
+
+    def house()
+        sql = "SELECT * FROM houses
+        WHERE id = $1"
+        values = [@house_id]
+        house_data = SqlRunner.run(sql, values).first
+        return House.new(house_data)
     end
 
     def pretty_name()
@@ -18,10 +26,10 @@ class Student
 
     def save()
         sql = "INSERT INTO students
-        (first_name, second_name, house, age)
+        (first_name, second_name, house_id, age)
         VALUES ($1, $2, $3, $4)
         RETURNING id"
-        values = [@first_name, @second_name, @house, @age]
+        values = [@first_name, @second_name, @house_id, @age]
         result = SqlRunner.run(sql, values).first
         @id = result['id'].to_i
     end

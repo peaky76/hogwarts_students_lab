@@ -31,21 +31,21 @@ houses.each { |house| house.save() }
 student1 = Student.new({
     "first_name" => "Jane",
     "second_name" => "Hope",
-    "house" => "Gryffindor",
+    "house_id" => house1.id,
     "age" => 25
 })
 
 student2 = Student.new({
     "first_name" => "Robert",
     "second_name" => "Peacock",
-    "house" => "Ravenclaw",
+    "house_id" => house3.id,
     "age" => 43
 })
 
 student3 = Student.new({
     "first_name" => "Alina",
     "second_name" => "Linden",
-    "house" => "Hufflepuff",
+    "house_id" => house4.id,
     "age" => 32
 })
 
