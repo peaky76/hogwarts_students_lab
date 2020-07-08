@@ -1,3 +1,4 @@
+require('pry-byebug')
 require_relative('../models/student')
 
 student1 = Student.new({
@@ -24,3 +25,6 @@ student3 = Student.new({
 student1.save()
 student2.save()
 student3.save()
+
+binding.pry
+nil
