@@ -12,6 +12,10 @@ class Student
         @age = options['age']
     end
 
+    def pretty_name()
+        return "#{@first_name} #{second_name}"
+    end
+
     def save()
         sql = "INSERT INTO students
         (first_name, second_name, house, age)
